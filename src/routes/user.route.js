@@ -9,6 +9,7 @@ import {
   strictTo,
   updatePassword,
 } from '../controllers/auth.controller.js';
+
 import {
   getAllUsers,
   getUser,
@@ -20,13 +21,17 @@ import {
 const router = express.Router();
 
 router.route('/login').post(login);
-router.route('/signup').post(signUp);
+router.route('/sign-up').post(signUp);
 router.route('/logout').get(protect, logout);
 router.route('/forgot-password').post(forgotPassword);
 router.route('/reset-password').post(resetPassword);
 router.route('/update-password').post(protect, updatePassword);
 
 router.route('/').get(getAllUsers).post(createUser);
-router.route('/:userId').get(getUser).patch(updateUser).delete(deleteUser);
+router
+  .route('/:userId')
+  .get(getUser)
+  .patch(protect, updateUser)
+  .delete(protect, deleteUser);
 
 export default router;

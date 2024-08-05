@@ -1,9 +1,12 @@
 import { promisify } from 'util';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import jwt from 'jsonwebtoken';
 import nodemailer from 'nodemailer';
 import catchAsync from '../utils/catchAsync.js';
 import AppError from '../utils/AppError.js';
 import User from '../models/user.model.js';
+import { getMailMarkup } from '../utils/otpMailMarkup.js';
 
 const createAndSendToken = (user, statusCode, res) => {
   const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
@@ -33,14 +36,12 @@ export const signUp = catchAsync(async (req, res, next) => {
 });
 
 export const login = catchAsync(async (req, res, next) => {
-  const { emailOrUsername, password } = req.body;
+  const { email, password } = req.body;
 
-  if (!emailOrUsername || !password)
-    return next(new AppError('Please provide email and password.'));
+  if (!email || !password)
+    return next(new AppError('Please provide email and password.', 400));
 
-  const user = await User.findOne({
-    $or: [{ email: emailOrUsername }, { username: emailOrUsername }],
-  }).select('+password');
+  const user = await User.findOne({ email }).select('+password');
 
   if (!user)
     return next(
@@ -71,6 +72,9 @@ export const forgotPassword = catchAsync(async (req, res, next) => {
   const OTP = await user.createOTP();
   await user.save({ validateBeforeSave: false });
 
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -79,22 +83,30 @@ export const forgotPassword = catchAsync(async (req, res, next) => {
     },
   });
 
+  const html = getMailMarkup(OTP);
+
   var mailOptions = {
     from: '"ShareSphere"',
     to: email,
     subject: 'OTP to change Password',
-    text: `Your OTP to reset the password is ${OTP}. (Only valid for 10 minutes)`,
+    // text: `Your OTP to reset the password is ${OTP}. (Only valid for 10 minutes)`,
+    attachments: [
+      {
+        filename: 'Logo.png',
+        path: `${__dirname}/../assets/logo/logo.png`,
+        cid: 'logo', //my mistake was putting "cid:logo@cid" here!
+      },
+    ],
+    html,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      console.log(error);
       res.status(400).json({
         status: 'fail',
         message: 'Unable to send OTP. Please try again later.',
       });
     } else {
-      console.log('Email sent: ' + info.response);
       res.status(200).json({
         status: 'success',
         message: 'We have sent an OTP to your email address.',
@@ -108,12 +120,8 @@ export const resetPassword = catchAsync(async (req, res, next) => {
 
   // Check otp with encrypted reset token
   const user = await User.findOne({ email });
-  const validateOTP = await user.checkOTP(
-    user.passwordResetToken,
-    user.passwordResetExpires,
-    otp,
-    next
-  );
+
+  const validateOTP = await user.checkOTP(otp, next);
 
   // if matched reset password
   if (!validateOTP) return next(new AppError('Incorrect OTP.', 400));
@@ -125,7 +133,10 @@ export const resetPassword = catchAsync(async (req, res, next) => {
   user.passwordChangedAt = Date.now();
   await user.save();
 
-  createAndSendToken(user, 200, res);
+  res.status(200).json({
+    status: 'success',
+    message: 'Password updated! Please login using new password.',
+  });
 });
 
 export const updatePassword = catchAsync(async (req, res, next) => {
@@ -141,7 +152,7 @@ export const updatePassword = catchAsync(async (req, res, next) => {
 
   user.password = newPassword;
   user.confirmPassword = confirmPassword;
-  user.save();
+  await user.save();
 
   createAndSendToken(user, 200, res);
 });

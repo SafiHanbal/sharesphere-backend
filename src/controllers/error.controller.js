@@ -30,11 +30,12 @@ const sendErrorProd = (res, err) => {
       status: err.status,
       message: err.message,
     });
+  } else {
+    res.status(500).json({
+      status: 'error',
+      message: 'Something went wrong.',
+    });
   }
-  res.status(500).json({
-    status: 'error',
-    message: 'Something went wrong.',
-  });
 };
 
 export default (err, req, res, next) => {
@@ -47,7 +48,6 @@ export default (err, req, res, next) => {
     error.name = err.name;
     error.message = err.message;
 
-    console.log(error);
     if (error.code === 11000) error = handleDuplicateKeyError(error);
     if (error.name === 'ValidationError') error = handleValidationError(error);
     sendErrorProd(res, error);
