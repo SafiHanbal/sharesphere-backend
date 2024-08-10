@@ -42,14 +42,14 @@ const userSchema = new mongoose.Schema({
   passwordResetExpires: Date,
 });
 
-userSchema.pre('save', async function (next) {
-  if (!this.isModified('password')) return next();
+// userSchema.pre('save', async function (next) {
+//   if (!this.isModified('password')) return next();
 
-  this.password = await bcrypt.hash(this.password, 12);
-  this.confirmPassword = undefined;
+//   this.password = await bcrypt.hash(this.password, 12);
+//   this.confirmPassword = undefined;
 
-  next();
-});
+//   next();
+// });
 
 userSchema.methods.checkPassword = async function (
   canditatePassword,

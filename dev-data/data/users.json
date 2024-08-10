@@ -1,0 +1,92 @@
+[
+  {
+    "username": "safihanbal",
+    "firstName": "Safi",
+    "lastName": "Hanbal",
+    "dateOfBirth": "02-15-2002",
+    "bio": "Lorem ipsum odor amet, consectetuer adipiscing elit. Tristique praesent nascetur vitae, natoque pulvinar ridiculus litora nullam. Conubia a nunc amet consequat finibus eleifend enim non. Enim sollicitudin curae volutpat lacus fringilla a suspendisse.",
+    "email": "safihanbal@gmail.com",
+    "password": "$2b$12$s6z1XsZf98Mg31Iarxv/0eEB1BZooHGVjg4LCWb1TsheMoST1PCbq"
+  },
+  {
+    "username": "sushant2",
+    "firstName": "Shushant",
+    "lastName": "Dixit",
+    "dateOfBirth": "05-06-2000",
+    "bio": "Lorem ipsum odor amet, consectetuer adipiscing elit. Tristique praesent nascetur vitae, natoque pulvinar ridiculus litora nullam. Conubia a nunc amet consequat finibus eleifend enim non. Enim sollicitudin curae volutpat lacus fringilla a suspendisse.",
+    "email": "shushant@test.com",
+    "password": "$2b$12$s6z1XsZf98Mg31Iarxv/0eEB1BZooHGVjg4LCWb1TsheMoST1PCbq"
+  },
+  {
+    "username": "atul78",
+    "firstName": "Atul",
+    "lastName": "Ghose",
+    "dateOfBirth": "08-15-1998",
+    "bio": "Lorem ipsum odor amet, consectetuer adipiscing elit. Tristique praesent nascetur vitae, natoque pulvinar ridiculus litora nullam. Conubia a nunc amet consequat finibus eleifend enim non. Enim sollicitudin curae volutpat lacus fringilla a suspendisse.",
+    "email": "atul@test.com",
+    "password": "$2b$12$s6z1XsZf98Mg31Iarxv/0eEB1BZooHGVjg4LCWb1TsheMoST1PCbq"
+  },
+  {
+    "username": "saurabh_minhas",
+    "firstName": "Saurabh",
+    "lastName": "Minhas",
+    "dateOfBirth": "11-31-2004",
+    "bio": "Lorem ipsum odor amet, consectetuer adipiscing elit. Tristique praesent nascetur vitae, natoque pulvinar ridiculus litora nullam. Conubia a nunc amet consequat finibus eleifend enim non. Enim sollicitudin curae volutpat lacus fringilla a suspendisse.",
+    "email": "saurabh@test.com",
+    "password": "$2b$12$s6z1XsZf98Mg31Iarxv/0eEB1BZooHGVjg4LCWb1TsheMoST1PCbq"
+  },
+  {
+    "username": "sarin_gaytri",
+    "firstName": "Gaytri",
+    "lastName": "Sarin",
+    "dateOfBirth": "12-04-1999",
+    "bio": "Lorem ipsum odor amet, consectetuer adipiscing elit. Tristique praesent nascetur vitae, natoque pulvinar ridiculus litora nullam. Conubia a nunc amet consequat finibus eleifend enim non. Enim sollicitudin curae volutpat lacus fringilla a suspendisse.",
+    "email": "gaytri@test.com",
+    "password": "$2b$12$s6z1XsZf98Mg31Iarxv/0eEB1BZooHGVjg4LCWb1TsheMoST1PCbq"
+  },
+  {
+    "username": "sri_madhu",
+    "firstName": "Madhu",
+    "lastName": "Shrivastav",
+    "dateOfBirth": "01-01-2000",
+    "bio": "Lorem ipsum odor amet, consectetuer adipiscing elit. Tristique praesent nascetur vitae, natoque pulvinar ridiculus litora nullam. Conubia a nunc amet consequat finibus eleifend enim non. Enim sollicitudin curae volutpat lacus fringilla a suspendisse.",
+    "email": "madhu@test.com",
+    "password": "$2b$12$s6z1XsZf98Mg31Iarxv/0eEB1BZooHGVjg4LCWb1TsheMoST1PCbq"
+  },
+  {
+    "username": "nagi.bhairavi",
+    "firstName": "Bhairavi",
+    "lastName": "Nagi",
+    "dateOfBirth": "06-24-2001",
+    "bio": "Lorem ipsum odor amet, consectetuer adipiscing elit. Tristique praesent nascetur vitae, natoque pulvinar ridiculus litora nullam. Conubia a nunc amet consequat finibus eleifend enim non. Enim sollicitudin curae volutpat lacus fringilla a suspendisse.",
+    "email": "bhairavi@test.com",
+    "password": "$2b$12$s6z1XsZf98Mg31Iarxv/0eEB1BZooHGVjg4LCWb1TsheMoST1PCbq"
+  },
+  {
+    "username": "kusum99",
+    "firstName": "Kusum",
+    "lastName": "Dutta",
+    "dateOfBirth": "04-25-2005",
+    "bio": "Lorem ipsum odor amet, consectetuer adipiscing elit. Tristique praesent nascetur vitae, natoque pulvinar ridiculus litora nullam. Conubia a nunc amet consequat finibus eleifend enim non. Enim sollicitudin curae volutpat lacus fringilla a suspendisse.",
+    "email": "kusum@test.com",
+    "password": "$2b$12$s6z1XsZf98Mg31Iarxv/0eEB1BZooHGVjg4LCWb1TsheMoST1PCbq"
+  },
+  {
+    "username": "sunita_bal",
+    "firstName": "Sunita",
+    "lastName": "Balan",
+    "dateOfBirth": "11-12-2004",
+    "bio": "Lorem ipsum odor amet, consectetuer adipiscing elit. Tristique praesent nascetur vitae, natoque pulvinar ridiculus litora nullam. Conubia a nunc amet consequat finibus eleifend enim non. Enim sollicitudin curae volutpat lacus fringilla a suspendisse.",
+    "email": "sunita@text.com",
+    "password": "$2b$12$s6z1XsZf98Mg31Iarxv/0eEB1BZooHGVjg4LCWb1TsheMoST1PCbq"
+  },
+  {
+    "username": "issac.vim",
+    "firstName": "Vimla",
+    "lastName": "Issac",
+    "dateOfBirth": "12-04-2003",
+    "bio": "Lorem ipsum odor amet, consectetuer adipiscing elit. Tristique praesent nascetur vitae, natoque pulvinar ridiculus litora nullam. Conubia a nunc amet consequat finibus eleifend enim non. Enim sollicitudin curae volutpat lacus fringilla a suspendisse.",
+    "email": "vimla@test.com",
+    "password": "$2b$12$s6z1XsZf98Mg31Iarxv/0eEB1BZooHGVjg4LCWb1TsheMoST1PCbq"
+  }
+]

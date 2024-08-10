@@ -1,6 +1,7 @@
 import catchAsync from '../utils/catchAsync.js';
 import User from '../models/user.model.js';
 import AppError from '../utils/AppError.js';
+import APIFeatures from '../utils/APIFeatures.js';
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};
@@ -13,9 +14,20 @@ const filterObj = (obj, ...allowedFields) => {
 };
 
 export const getAllUsers = catchAsync(async (req, res, next) => {
-  res.status(400).json({
-    status: 'fail',
-    message: 'This route is not implemented yet.',
+  const query = new APIFeatures(User.find(), req.query)
+    .filter()
+    .sort()
+    .limit()
+    .paginate().query;
+
+  const users = await query;
+
+  res.status(200).json({
+    status: 'success',
+    results: users.length,
+    data: {
+      users,
+    },
   });
 });
 
@@ -67,5 +79,34 @@ export const deleteUser = catchAsync(async (req, res, next) => {
   res.status(400).json({
     status: 'fail',
     message: 'This route is not implemented yet.',
+  });
+});
+
+export const searchUser = catchAsync(async (req, res, next) => {
+  const { username } = req.params;
+
+  const query = new APIFeatures(
+    User.find({
+      $or: [
+        { username: { $regex: username, $options: 'i' } },
+        { firstName: { $regex: username, $options: 'i' } },
+        { lastName: { $regex: username, $options: 'i' } },
+      ],
+    }),
+    req.query
+  )
+    .filter()
+    .sort()
+    .limit()
+    .paginate().query;
+
+  const users = await query;
+
+  res.status(200).json({
+    status: 'success',
+    results: users.length,
+    data: {
+      users,
+    },
   });
 });
