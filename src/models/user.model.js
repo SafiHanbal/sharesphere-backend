@@ -42,14 +42,14 @@ const userSchema = new mongoose.Schema({
   passwordResetExpires: Date,
 });
 
-// userSchema.pre('save', async function (next) {
-//   if (!this.isModified('password')) return next();
+userSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) return next();
 
-//   this.password = await bcrypt.hash(this.password, 12);
-//   this.confirmPassword = undefined;
+  this.password = await bcrypt.hash(this.password, 12);
+  this.confirmPassword = undefined;
 
-//   next();
-// });
+  next();
+});
 
 userSchema.methods.checkPassword = async function (
   canditatePassword,
@@ -60,7 +60,6 @@ userSchema.methods.checkPassword = async function (
 
 userSchema.methods.createOTP = async function () {
   const OTP = String(Math.floor(Math.random() * (999999 - 100000) + 100000));
-  console.log('getOTP', OTP);
   this.passwordResetToken = crypto
     .createHash('sha256')
     .update(OTP)
@@ -72,13 +71,11 @@ userSchema.methods.createOTP = async function () {
 userSchema.methods.checkOTP = async function (OTP, next) {
   if (Date.now() > this.passwordResetExpires)
     return next(new AppError('OTP expired request a new OTP.', 400));
-  console.log('resetPass', String(OTP));
+
   const hashedToken = crypto
     .createHash('sha256')
     .update(String(OTP))
     .digest('hex');
-
-  console.log(this.passwordResetToken, hashedToken);
 
   return this.passwordResetToken === hashedToken;
 };

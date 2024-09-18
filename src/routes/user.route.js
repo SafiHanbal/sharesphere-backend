@@ -30,7 +30,7 @@ router.route('/reset-password').post(resetPassword);
 router.route('/update-password').post(protect, updatePassword);
 
 // User routes
-router.route('/search/:username').get(searchUser);
+router.route('/search/:username').get(protect, searchUser);
 router.route('/').get(getAllUsers).post(createUser);
 router
   .route('/:userId')

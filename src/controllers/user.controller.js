@@ -83,10 +83,12 @@ export const deleteUser = catchAsync(async (req, res, next) => {
 });
 
 export const searchUser = catchAsync(async (req, res, next) => {
+  const { _id: currentUserId } = req.user;
   const { username } = req.params;
 
   const query = new APIFeatures(
     User.find({
+      $and: { _id: { $ne: currentUserId } },
       $or: [
         { username: { $regex: username, $options: 'i' } },
         { firstName: { $regex: username, $options: 'i' } },
