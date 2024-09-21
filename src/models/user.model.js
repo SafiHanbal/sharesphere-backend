@@ -3,44 +3,49 @@ import bcrypt from 'bcrypt';
 import crypto from 'crypto';
 import AppError from '../utils/AppError.js';
 
-const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: [true, 'A user must have a username.'],
-    unique: [true, 'This username is aleady taken. Try something else.'],
-  },
-  firstName: String,
-  lastName: String,
-  dateOfBirth: Date,
-  bio: String,
-  profilePicture: {
-    type: String,
-    default: 'default-profile-picture.png',
-  },
-  email: {
-    type: String,
-    required: [true, 'A user must have an email.'],
-    unique: [true, 'This email already has an account. Please login.'],
-  },
-  password: {
-    type: String,
-    required: [true, 'A user must have a password.'],
-    select: false,
-  },
-  confirmPassword: {
-    type: String,
-    required: [true, 'Please confirm your password.'],
-    validate: {
-      message: 'Passwords do not match.',
-      validator: function (val) {
-        return this.password === val;
+const userSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: [true, 'A user must have a username.'],
+      unique: [true, 'This username is aleady taken. Try something else.'],
+    },
+    firstName: String,
+    lastName: String,
+    dateOfBirth: Date,
+    bio: String,
+    profilePicture: {
+      type: String,
+      default: 'default-profile-picture.png',
+    },
+    email: {
+      type: String,
+      required: [true, 'A user must have an email.'],
+      unique: [true, 'This email already has an account. Please login.'],
+    },
+    password: {
+      type: String,
+      required: [true, 'A user must have a password.'],
+      select: false,
+    },
+    confirmPassword: {
+      type: String,
+      required: [true, 'Please confirm your password.'],
+      validate: {
+        message: 'Passwords do not match.',
+        validator: function (val) {
+          return this.password === val;
+        },
       },
     },
+    passwordChangedAt: Date,
+    passwordResetToken: String,
+    passwordResetExpires: Date,
   },
-  passwordChangedAt: Date,
-  passwordResetToken: String,
-  passwordResetExpires: Date,
-});
+  {
+    timestamps: true,
+  }
+);
 
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
