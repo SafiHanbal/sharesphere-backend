@@ -4,6 +4,7 @@ import path from 'path';
 import mongoose from 'mongoose';
 import Like from './like.model.js';
 import Comment from './comment.model.js';
+import User from './user.model.js';
 
 // This gets the current directory
 const __filename = fileURLToPath(import.meta.url);
@@ -37,12 +38,20 @@ const postSchema = new mongoose.Schema(
   }
 );
 
+// Virtual populate to get associated likes
+postSchema.virtual('likes', {
+  ref: 'Like',
+  localField: '_id',
+  foreignField: 'post',
+  justOne: true,
+});
+
 // Virtual populate to get associated comments
 postSchema.virtual('comments', {
-  ref: 'Comment', // The model to use
-  localField: '_id', // The field in the Post model
-  foreignField: 'post', // The field in the Comment model that references the Post
-  justOne: false, // This means we expect an array of comments
+  ref: 'Comment',
+  localField: '_id',
+  foreignField: 'post',
+  justOne: false,
 });
 
 // Deleting all associated likes and comments if a post is deleted
@@ -63,6 +72,36 @@ postSchema.post('findOneAndDelete', async function (deletedPost) {
     }
   } catch (err) {
     console.error('Error while deleting associated resources:', err);
+  }
+});
+
+postSchema.pre('save', async function (next) {
+  const post = this;
+
+  try {
+    const postCount = await mongoose
+      .model('Post')
+      .countDocuments({ user: post.user });
+
+    await User.findByIdAndUpdate(post.user, { postCount: postCount + 1 });
+  } catch (err) {
+    next(err);
+  }
+});
+
+postSchema.post('findOneAndDelete', async function (deletedPost) {
+  if (deletedPost) {
+    try {
+      const postCount = await mongoose
+        .model('Post')
+        .countDocuments({ user: deletedPost.user });
+
+      await User.findByIdAndUpdate(deletedPost.user, {
+        postCount,
+      });
+    } catch (err) {
+      console.error('Error updating likeCounts after deletion:', err);
+    }
   }
 });
 

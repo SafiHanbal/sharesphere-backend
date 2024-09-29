@@ -5,6 +5,7 @@ import sharp from 'sharp';
 
 import catchAsync from '../utils/catchAsync.js';
 import AppError from '../utils/AppError.js';
+import APIFeatures from '../utils/APIFeatures.js';
 import Post from '../models/post.model.js';
 import Like from '../models/like.model.js';
 
@@ -17,9 +18,46 @@ const storage = multer.memoryStorage();
 export const upload = multer({ storage }).array('images');
 
 export const getAllPosts = catchAsync(async (req, res, next) => {
+  const { _id: currentUserId, following } = req.user;
+
+  const postsOfFollowingUser = Post.find({ user: { $in: following } });
+
+  const query = new APIFeatures(postsOfFollowingUser, req.query)
+    .filter()
+    .sort()
+    .limit()
+    .paginate().query;
+
+  const posts = await query
+    .populate({
+      path: 'user',
+      select: 'profilePicture firstName lastName',
+    })
+    .populate({
+      path: 'likes',
+      match: { user: currentUserId },
+    })
+    .populate({
+      path: 'comments',
+      match: { user: currentUserId },
+      populate: {
+        path: 'user',
+        select: 'firstName lastName profilePicture',
+      },
+    })
+    .lean();
+
+  const postWithIsLiked = posts.map((post) => ({
+    ...post,
+    isLiked: !!post.likes,
+  }));
+
   res.status(200).json({
     status: 'success',
-    message: 'Route is working',
+    results: posts.length,
+    data: {
+      posts: postWithIsLiked,
+    },
   });
 });
 
@@ -34,7 +72,7 @@ export const createPost = catchAsync(async (req, res, next) => {
 
   // Loop through images and resize each
   for (const [index, file] of images.entries()) {
-    const filename = `${user}-${Date.now()}-${index}.jpeg`;
+    const filename = `post-${user}-${Date.now()}-${index}.jpeg`;
 
     const postDir = path.join(__dirname, '../public/images/post');
     const outputPath = path.join(postDir, filename);
@@ -67,10 +105,15 @@ export const getPost = catchAsync(async (req, res, next) => {
   const { id } = req.params;
   const user = req.user._id;
 
-  const post = await Post.findById(id).populate({
-    path: 'comments',
-    populate: { path: 'user', select: 'firstName lastName profilePicture' },
-  });
+  const post = await Post.findById(id)
+    .populate({
+      path: 'user',
+      select: 'firstName lastName profilePicture',
+    })
+    .populate({
+      path: 'comments',
+      populate: { path: 'user', select: 'firstName lastName profilePicture' },
+    });
 
   if (!post) return next(new AppError('Required post not found.', 404));
 

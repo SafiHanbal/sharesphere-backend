@@ -14,10 +14,7 @@ const userSchema = new mongoose.Schema(
     lastName: String,
     dateOfBirth: Date,
     bio: String,
-    profilePicture: {
-      type: String,
-      default: 'default-profile-picture.png',
-    },
+    profilePicture: String,
     email: {
       type: String,
       required: [true, 'A user must have an email.'],
@@ -27,6 +24,23 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'A user must have a password.'],
       select: false,
+    },
+    followersCount: {
+      type: Number,
+      default: 0,
+    },
+    following: {
+      type: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'User',
+        },
+      ],
+      default: [],
+    },
+    postCount: {
+      type: Number,
+      default: 0,
     },
     confirmPassword: {
       type: String,
@@ -43,9 +57,18 @@ const userSchema = new mongoose.Schema(
     passwordResetExpires: Date,
   },
   {
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true },
     timestamps: true,
   }
 );
+
+userSchema.virtual('posts', {
+  ref: 'Post',
+  localField: '_id',
+  foreignField: 'user',
+  justOne: false,
+});
 
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();

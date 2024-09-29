@@ -35,13 +35,23 @@ export const accessChat = catchAsync(async (req, res, next) => {
     path: 'users',
     select: 'firstName lastName profilePicture',
   });
+
   if (!chats.length) {
-    const newChat = await Chat.create({ users: [currentUserId, userId] });
+    // Creating new chat
+    const newChat = await Chat.create({
+      users: [currentUserId, userId],
+    });
+
+    // Populating users in chat
+    const chat = await Chat.findById(newChat._id).populate({
+      path: 'users',
+      select: 'firstName lastName profilePicture',
+    });
 
     res.status(201).json({
       status: 'success',
       data: {
-        chat: newChat,
+        chat,
       },
     });
   } else {

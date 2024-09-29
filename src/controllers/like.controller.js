@@ -44,9 +44,10 @@ export const getLike = catchAsync(async (req, res, next) => {
 });
 
 export const deleteLike = catchAsync(async (req, res, next) => {
+  const currentUserId = req.user._id;
   const { id } = req.params;
 
-  await Like.findByIdAndDelete(id);
+  await Like.findOneAndDelete({ user: currentUserId, post: id });
 
   res.status(204).json({
     status: 'success',
