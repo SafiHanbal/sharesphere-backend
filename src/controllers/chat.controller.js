@@ -1,10 +1,9 @@
 import catchAsync from '../utils/catchAsync.js';
-import AppError from '../utils/AppError.js';
-import User from '../models/user.model.js';
 import Chat from '../models/chat.model.js';
 
 export const getChats = catchAsync(async (req, res, next) => {
   const { _id: currentUserId } = req.user;
+
   const chats = await Chat.find({
     users: { $elemMatch: { $eq: currentUserId } },
   })

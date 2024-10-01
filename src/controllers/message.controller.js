@@ -1,8 +1,8 @@
-import Message from '../models/message.model.js';
-import Chat from '../models/chat.model.js';
-
 import catchAsync from '../utils/catchAsync.js';
 import AppError from '../utils/AppError.js';
+
+import Message from '../models/message.model.js';
+import Chat from '../models/chat.model.js';
 
 export const sendMessage = catchAsync(async (req, res, next) => {
   const { _id: currentUserId } = req.user;
@@ -30,7 +30,7 @@ export const sendMessage = catchAsync(async (req, res, next) => {
 export const getAllMessages = catchAsync(async (req, res, next) => {
   const { chatId } = req.params;
 
-  const messages = await Message.find({ chat: chatId });
+  const messages = await Message.find({ chat: chatId }).sort({ createdAt: 1 });
 
   res.status(200).json({
     status: 'success',

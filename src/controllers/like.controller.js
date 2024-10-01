@@ -15,10 +15,10 @@ export const getAllLikes = catchAsync(async (req, res, next) => {
 });
 
 export const createLike = catchAsync(async (req, res, next) => {
-  const user = req.user._id;
+  const currentUserId = req.user._id;
   const { post } = req.body;
 
-  const like = await Like.create({ user, post });
+  const like = await Like.create({ user: currentUserId, post });
 
   res.status(201).json({
     status: 'success',

@@ -22,6 +22,7 @@ const likeSchema = new mongoose.Schema(
 // Ensure that one user can only like one post once
 likeSchema.index({ user: 1, post: 1 }, { unique: true });
 
+// Incrementing likesCount on associated post document
 likeSchema.pre('save', async function (next) {
   const like = this;
 
@@ -36,6 +37,7 @@ likeSchema.pre('save', async function (next) {
   }
 });
 
+// Decrementing likesCount on associated post document
 likeSchema.post('findOneAndDelete', async function (deletedLike) {
   if (deletedLike) {
     try {

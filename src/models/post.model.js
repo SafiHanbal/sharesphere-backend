@@ -75,6 +75,7 @@ postSchema.post('findOneAndDelete', async function (deletedPost) {
   }
 });
 
+// Incrementing postCount on associated user document
 postSchema.pre('save', async function (next) {
   const post = this;
 
@@ -89,6 +90,7 @@ postSchema.pre('save', async function (next) {
   }
 });
 
+// Decrementing postCount on associated user document
 postSchema.post('findOneAndDelete', async function (deletedPost) {
   if (deletedPost) {
     try {

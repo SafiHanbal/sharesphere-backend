@@ -17,6 +17,7 @@ mongoose
       console.log(`App running on port: ${port}`);
     });
 
+    // Socket for message functionality
     const io = new Server(server, {
       pingTimeout: 60000,
       cors: {

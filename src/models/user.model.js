@@ -63,6 +63,7 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+// Virtual populate to get associated posts
 userSchema.virtual('posts', {
   ref: 'Post',
   localField: '_id',
@@ -70,6 +71,7 @@ userSchema.virtual('posts', {
   justOne: false,
 });
 
+// Encrypting user's password on signup
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
 
@@ -108,6 +110,7 @@ userSchema.methods.checkOTP = async function (OTP, next) {
   return this.passwordResetToken === hashedToken;
 };
 
+// Check if the password is changed after the token is created
 userSchema.methods.changedPasswordAfter = async function (JWTTimestamp) {
   if (this.passwordChangedAt) {
     const changedTimestamp = parseInt(

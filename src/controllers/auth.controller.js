@@ -1,12 +1,19 @@
 import { promisify } from 'util';
-import path from 'path';
 import { fileURLToPath } from 'url';
+
+import path from 'path';
 import jwt from 'jsonwebtoken';
 import nodemailer from 'nodemailer';
 import catchAsync from '../utils/catchAsync.js';
+
 import AppError from '../utils/AppError.js';
 import User from '../models/user.model.js';
+
 import { getMailMarkup } from '../utils/otpMailMarkup.js';
+
+// Defining variable to access files
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const createAndSendToken = (user, statusCode, res) => {
   const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
@@ -69,12 +76,11 @@ export const forgotPassword = catchAsync(async (req, res, next) => {
   if (!user)
     return next(new AppError('There is no user with provided email.', 404));
 
+  // Creating and saving encrypted otp in database
   const OTP = await user.createOTP();
   await user.save({ validateBeforeSave: false });
 
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-
+  // Setting up sending otp email
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -100,6 +106,7 @@ export const forgotPassword = catchAsync(async (req, res, next) => {
     html,
   };
 
+  // Sending otp mail
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       res.status(400).json({
@@ -126,6 +133,7 @@ export const resetPassword = catchAsync(async (req, res, next) => {
   // if matched reset password
   if (!validateOTP) return next(new AppError('Incorrect OTP.', 400));
 
+  // Updating fields in user document to save in db
   user.password = password;
   user.confirmPassword = confirmPassword;
   user.passwordResetToken = undefined;
@@ -147,6 +155,7 @@ export const updatePassword = catchAsync(async (req, res, next) => {
   if (!currentPassword || !newPassword || !confirmPassword)
     return next(new AppError('Please provide necessary details.', 400));
 
+  // Validating current password
   if (!(await user.checkPassword(currentPassword, user.password)))
     return next(new AppError('Please provide correct current password.', 400));
 

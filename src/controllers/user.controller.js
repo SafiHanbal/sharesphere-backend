@@ -181,10 +181,10 @@ export const searchUser = catchAsync(async (req, res, next) => {
 
 export const follow = catchAsync(async (req, res, next) => {
   const { userId } = req.params;
-  const loggedInUserId = req.user._id;
+  const currentUserId = req.user._id;
 
   // Check if logged in user is same as user to follow
-  if (userId === loggedInUserId)
+  if (userId === currentUserId)
     return next(new AppError('You can not follow yourself', 400));
 
   // Check if user already follows the user
@@ -198,7 +198,7 @@ export const follow = catchAsync(async (req, res, next) => {
 
   // Update following array field in logged in user's document
   const updatedUser = await User.findByIdAndUpdate(
-    loggedInUserId,
+    currentUserId,
     {
       $addToSet: { following: userId },
     },
@@ -218,10 +218,10 @@ export const follow = catchAsync(async (req, res, next) => {
 
 export const unfollow = catchAsync(async (req, res, next) => {
   const { userId } = req.params;
-  const loggedInUserId = req.user._id;
+  const currentUserId = req.user._id;
 
   // Check if logged in user is same as user to follow
-  if (userId === loggedInUserId)
+  if (userId === currentUserId)
     return next(new AppError('You can not follow yourself', 400));
 
   // Check if user follows the user
@@ -235,7 +235,7 @@ export const unfollow = catchAsync(async (req, res, next) => {
 
   // Update following array field in logged in user's document
   const updatedUser = await User.findByIdAndUpdate(
-    loggedInUserId,
+    currentUserId,
     {
       $pull: { following: userId },
     },

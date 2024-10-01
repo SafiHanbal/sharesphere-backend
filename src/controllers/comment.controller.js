@@ -15,9 +15,17 @@ export const getAllComments = catchAsync(async (req, res, next) => {
 });
 
 export const createComment = catchAsync(async (req, res, next) => {
-  const user = req.user._id;
+  const currentUserId = req.user._id;
+  const { post, content } = req.body;
 
-  const comment = await Comment.create({ user, ...req.body });
+  if (!post || !content)
+    return next(new AppError('Please provide postId and comment content', 400));
+
+  const comment = await Comment.create({
+    post,
+    content,
+    user: currentUserId,
+  });
 
   res.status(201).json({
     status: 'success',

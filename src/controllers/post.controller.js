@@ -6,6 +6,7 @@ import sharp from 'sharp';
 import catchAsync from '../utils/catchAsync.js';
 import AppError from '../utils/AppError.js';
 import APIFeatures from '../utils/APIFeatures.js';
+
 import Post from '../models/post.model.js';
 import Like from '../models/like.model.js';
 
@@ -62,7 +63,7 @@ export const getAllPosts = catchAsync(async (req, res, next) => {
 });
 
 export const createPost = catchAsync(async (req, res, next) => {
-  const user = req.user._id;
+  const currentUserId = req.user._id;
   const images = req.files;
   const imagePaths = [];
 
@@ -72,7 +73,7 @@ export const createPost = catchAsync(async (req, res, next) => {
 
   // Loop through images and resize each
   for (const [index, file] of images.entries()) {
-    const filename = `post-${user}-${Date.now()}-${index}.jpeg`;
+    const filename = `post-${currentUserId}-${Date.now()}-${index}.jpeg`;
 
     const postDir = path.join(__dirname, '../public/images/post');
     const outputPath = path.join(postDir, filename);
@@ -83,12 +84,13 @@ export const createPost = catchAsync(async (req, res, next) => {
       .jpeg({ quality: 80 })
       .toFile(outputPath);
 
-    imagePaths.push(filename); // Save image path for post
+    // Save image path for post
+    imagePaths.push(filename);
   }
 
   const { caption } = req.body;
   const post = await Post.create({
-    user,
+    user: currentUserId,
     caption,
     images: imagePaths,
   });
@@ -103,7 +105,7 @@ export const createPost = catchAsync(async (req, res, next) => {
 
 export const getPost = catchAsync(async (req, res, next) => {
   const { id } = req.params;
-  const user = req.user._id;
+  const currentUserId = req.user._id;
 
   const post = await Post.findById(id)
     .populate({
@@ -119,16 +121,16 @@ export const getPost = catchAsync(async (req, res, next) => {
 
   // Check for logged in user's like
   let isLiked = false;
-  const like = await Like.findOne({ post: id, user });
+  const like = await Like.findOne({ post: id, user: currentUserId });
   isLiked = !!like;
 
   // Sorting comments to have logged in user's comment at last
   const otherComments = post.comments.filter(
-    (comment) => String(user) !== String(comment.user._id)
+    (comment) => String(currentUserId) !== String(comment.user._id)
   );
 
   const userComments = post.comments.filter(
-    (comment) => String(user) === String(comment.user._id)
+    (comment) => String(currentUserId) === String(comment.user._id)
   );
 
   res.status(200).json({

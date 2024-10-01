@@ -1,0 +1,100 @@
+[
+  {
+    "_id": "66fa9c44052cdea7fdae625b",
+    "isGroupChat": false,
+    "users": ["66fa84ff052cdea7fdae5b43", "66fa8c11052cdea7fdae5c07"],
+    "createdAt": "2024-09-30T12:40:36.095Z",
+    "updatedAt": "2024-09-30T12:55:46.690Z",
+    "__v": 0,
+    "latestMessage": "66fa9fd2052cdea7fdae64a5"
+  },
+  {
+    "_id": "66fa9cdf052cdea7fdae62a9",
+    "isGroupChat": false,
+    "users": ["66fa84ff052cdea7fdae5b43", "66fa8db1052cdea7fdae5c2d"],
+    "createdAt": "2024-09-30T12:43:11.495Z",
+    "updatedAt": "2024-09-30T14:04:56.716Z",
+    "__v": 0,
+    "latestMessage": "66fab0084a24a8748cd50a57"
+  },
+  {
+    "_id": "66fa9ced052cdea7fdae62c9",
+    "isGroupChat": false,
+    "users": ["66fa84ff052cdea7fdae5b43", "66fa8798052cdea7fdae5b6f"],
+    "createdAt": "2024-09-30T12:43:25.015Z",
+    "updatedAt": "2024-09-30T13:35:06.501Z",
+    "__v": 0,
+    "latestMessage": "66faa90a4a24a8748cd5057c"
+  },
+  {
+    "_id": "66fa9cfb052cdea7fdae62e9",
+    "isGroupChat": false,
+    "users": ["66fa84ff052cdea7fdae5b43", "66fa8719052cdea7fdae5b5c"],
+    "createdAt": "2024-09-30T12:43:39.015Z",
+    "updatedAt": "2024-09-30T13:48:03.314Z",
+    "__v": 0,
+    "latestMessage": "66faac134a24a8748cd507cd"
+  },
+  {
+    "_id": "66fa9d03052cdea7fdae6308",
+    "isGroupChat": false,
+    "users": ["66fa84ff052cdea7fdae5b43", "66fa88b4052cdea7fdae5b82"],
+    "createdAt": "2024-09-30T12:43:47.444Z",
+    "updatedAt": "2024-09-30T13:45:57.293Z",
+    "__v": 0,
+    "latestMessage": "66faab954a24a8748cd5074f"
+  },
+  {
+    "_id": "66fa9d0c052cdea7fdae6329",
+    "isGroupChat": false,
+    "users": ["66fa84ff052cdea7fdae5b43", "66fa907a052cdea7fdae5cb2"],
+    "createdAt": "2024-09-30T12:43:56.243Z",
+    "updatedAt": "2024-09-30T13:44:12.636Z",
+    "__v": 0,
+    "latestMessage": "66faab2c4a24a8748cd506be"
+  },
+  {
+    "_id": "66fa9d16052cdea7fdae6349",
+    "isGroupChat": false,
+    "users": ["66fa84ff052cdea7fdae5b43", "66fa8a95052cdea7fdae5bce"],
+    "createdAt": "2024-09-30T12:44:06.613Z",
+    "updatedAt": "2024-09-30T13:40:00.165Z",
+    "__v": 0,
+    "latestMessage": "66faaa2f4a24a8748cd50611"
+  },
+  {
+    "_id": "66fa9d1f052cdea7fdae6369",
+    "isGroupChat": false,
+    "users": ["66fa84ff052cdea7fdae5b43", "66fa8b8e052cdea7fdae5bf4"],
+    "createdAt": "2024-09-30T12:44:15.582Z",
+    "updatedAt": "2024-09-30T14:00:50.358Z",
+    "__v": 0,
+    "latestMessage": "66faaf114a24a8748cd509aa"
+  },
+  {
+    "_id": "66fa9d3b052cdea7fdae6389",
+    "isGroupChat": false,
+    "users": ["66fa84ff052cdea7fdae5b43", "66fa8af2052cdea7fdae5be1"],
+    "createdAt": "2024-09-30T12:44:43.962Z",
+    "updatedAt": "2024-09-30T13:57:25.410Z",
+    "__v": 0,
+    "latestMessage": "66faae454a24a8748cd5090c"
+  },
+  {
+    "_id": "66fa9d45052cdea7fdae63a9",
+    "isGroupChat": false,
+    "users": ["66fa84ff052cdea7fdae5b43", "66fa8f90052cdea7fdae5c8c"],
+    "createdAt": "2024-09-30T12:44:53.681Z",
+    "updatedAt": "2024-09-30T13:54:30.624Z",
+    "__v": 0,
+    "latestMessage": "66faad964a24a8748cd5085b"
+  },
+  {
+    "_id": "66fbb6c4dd4fe584946f418a",
+    "isGroupChat": false,
+    "users": ["66fa907a052cdea7fdae5cb2", null],
+    "createdAt": "2024-10-01T08:45:56.422Z",
+    "updatedAt": "2024-10-01T08:45:56.422Z",
+    "__v": 0
+  }
+]

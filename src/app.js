@@ -16,11 +16,14 @@ const app = express();
 
 app.use('/public', express.static(path.join('src', 'public')));
 
+// Developement middlewares
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
+// Routes
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/chats', chatRouter);
 app.use('/api/v1/messages', messageRouter);
@@ -28,6 +31,7 @@ app.use('/api/v1/posts', postRouter);
 app.use('/api/v1/likes', likeRouter);
 app.use('/api/v1/comments', commentRouter);
 
+// Error Handler
 app.use(globalErrorHandler);
 
 export default app;

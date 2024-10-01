@@ -1,0 +1,668 @@
+[
+  {
+    "_id": "66fa9f3d052cdea7fdae6401",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Hey Benjamin, I’m working on my website’s SEO. Any tips for a beginner?",
+    "chat": "66fa9c44052cdea7fdae625b",
+    "createdAt": "2024-09-30T12:53:17.270Z",
+    "updatedAt": "2024-09-30T12:53:17.270Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9f60052cdea7fdae6476",
+    "sender": "66fa8c11052cdea7fdae5c07",
+    "content": "I usually use tools like Google Keyword Planner or SEMrush. Look for keywords with good search volume but not too competitive. Long-tail ones are easier to rank for. What's your site about?",
+    "chat": "66fa9c44052cdea7fdae625b",
+    "createdAt": "2024-09-30T12:53:52.839Z",
+    "updatedAt": "2024-09-30T12:53:52.839Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9f82052cdea7fdae647d",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "It’s my portfolio for UI/UX design. Hoping to get some freelance work from it.",
+    "chat": "66fa9c44052cdea7fdae625b",
+    "createdAt": "2024-09-30T12:54:26.928Z",
+    "updatedAt": "2024-09-30T12:54:26.928Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9f98052cdea7fdae6486",
+    "sender": "66fa8c11052cdea7fdae5c07",
+    "content": "Nice! Try keywords like \"freelance UI/UX designer\" or \"UI design portfolio.\" You could also write a blog or case studies to boost SEO.",
+    "chat": "66fa9c44052cdea7fdae625b",
+    "createdAt": "2024-09-30T12:54:48.602Z",
+    "updatedAt": "2024-09-30T12:54:48.602Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9fac052cdea7fdae648d",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’ve been thinking about blogging but not sure what to write. Any ideas?",
+    "chat": "66fa9c44052cdea7fdae625b",
+    "createdAt": "2024-09-30T12:55:08.159Z",
+    "updatedAt": "2024-09-30T12:55:08.159Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9fbf052cdea7fdae6496",
+    "sender": "66fa8c11052cdea7fdae5c07",
+    "content": "You could write about your design process, tips, or break down your projects. It’ll show off your skills and help with SEO.",
+    "chat": "66fa9c44052cdea7fdae625b",
+    "createdAt": "2024-09-30T12:55:27.081Z",
+    "updatedAt": "2024-09-30T12:55:27.081Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9f58052cdea7fdae646d",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "A little, but I’m not sure about the right keywords. How do you find them?",
+    "chat": "66fa9c44052cdea7fdae625b",
+    "createdAt": "2024-09-30T12:53:44.236Z",
+    "updatedAt": "2024-09-30T12:53:44.236Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9f48052cdea7fdae640e",
+    "sender": "66fa8c11052cdea7fdae5c07",
+    "content": "Hey! Sure thing. Start with your on-page SEO—title tags, meta descriptions, and keywords. Have you worked on those yet?",
+    "chat": "66fa9c44052cdea7fdae625b",
+    "createdAt": "2024-09-30T12:53:28.816Z",
+    "updatedAt": "2024-09-30T12:53:28.816Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9fd2052cdea7fdae64a5",
+    "sender": "66fa8c11052cdea7fdae5c07",
+    "content": "No problem at all! Happy to help. Good luck with your site!",
+    "chat": "66fa9c44052cdea7fdae625b",
+    "createdAt": "2024-09-30T12:55:46.596Z",
+    "updatedAt": "2024-09-30T12:55:46.596Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9fca052cdea7fdae649d",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "That’s awesome advice. Thanks, Benjamin! Mind if I hit you up again if I need more help?",
+    "chat": "66fa9c44052cdea7fdae625b",
+    "createdAt": "2024-09-30T12:55:38.073Z",
+    "updatedAt": "2024-09-30T12:55:38.073Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faa8be4a24a8748cd50513",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Hey Liam! How’s it going? Must be fun working with indie artists!",
+    "chat": "66fa9ced052cdea7fdae62c9",
+    "createdAt": "2024-09-30T13:33:50.081Z",
+    "updatedAt": "2024-09-30T13:33:50.081Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faa8c64a24a8748cd50521",
+    "sender": "66fa8798052cdea7fdae5b6f",
+    "content": "Hey Safi, it’s awesome! Lots of creativity. Every project’s different. What are you working on?",
+    "chat": "66fa9ced052cdea7fdae62c9",
+    "createdAt": "2024-09-30T13:33:58.409Z",
+    "updatedAt": "2024-09-30T13:33:58.409Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faa8da4a24a8748cd5053f",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m on a new web project. Building a clean UI for a startup. I’m always tweaking stuff though. Do you ever feel like your work’s never done?",
+    "chat": "66fa9ced052cdea7fdae62c9",
+    "createdAt": "2024-09-30T13:34:18.461Z",
+    "updatedAt": "2024-09-30T13:34:18.461Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faa8e34a24a8748cd5054d",
+    "sender": "66fa8798052cdea7fdae5b6f",
+    "content": "Oh yeah, all the time! Music’s like that too. At some point, you just have to stop. How do you handle it?",
+    "chat": "66fa9ced052cdea7fdae62c9",
+    "createdAt": "2024-09-30T13:34:27.540Z",
+    "updatedAt": "2024-09-30T13:34:27.540Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faa9014a24a8748cd50570",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Same! I keep wanting to change things. Perfectionist problems, right? How do you know when to stop?",
+    "chat": "66fa9ced052cdea7fdae62c9",
+    "createdAt": "2024-09-30T13:34:57.052Z",
+    "updatedAt": "2024-09-30T13:34:57.052Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faa90a4a24a8748cd5057c",
+    "sender": "66fa8798052cdea7fdae5b6f",
+    "content": "Haha, I step back and ask, “Is this worth it or just nitpicking?” That usually helps. What about you?",
+    "chat": "66fa9ced052cdea7fdae62c9",
+    "createdAt": "2024-09-30T13:35:06.423Z",
+    "updatedAt": "2024-09-30T13:35:06.423Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faa9f74a24a8748cd505d6",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Hey Mia! I saw you’re into cooking. What’s your latest recipe?",
+    "chat": "66fa9d16052cdea7fdae6349",
+    "createdAt": "2024-09-30T13:39:03.235Z",
+    "updatedAt": "2024-09-30T13:39:03.235Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaa044a24a8748cd505e9",
+    "sender": "66fa8a95052cdea7fdae5bce",
+    "content": "Hey Safi! I just tried a spicy mango salsa. It’s super fresh and flavorful! What about you? Working on any cool projects?",
+    "chat": "66fa9d16052cdea7fdae6349",
+    "createdAt": "2024-09-30T13:39:16.983Z",
+    "updatedAt": "2024-09-30T13:39:16.983Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaa0b4a24a8748cd505f2",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "That sounds delicious! I’m working on a web design for a startup. It’s all about creating a great user experience.",
+    "chat": "66fa9d16052cdea7fdae6349",
+    "createdAt": "2024-09-30T13:39:23.974Z",
+    "updatedAt": "2024-09-30T13:39:23.974Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaa154a24a8748cd505fa",
+    "sender": "66fa8a95052cdea7fdae5bce",
+    "content": "Nice! I love that. Good design is like a good meal—everything needs to come together. Do you like to cook too?",
+    "chat": "66fa9d16052cdea7fdae6349",
+    "createdAt": "2024-09-30T13:39:33.854Z",
+    "updatedAt": "2024-09-30T13:39:33.854Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaa1f4a24a8748cd50602",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I dabble a bit! I enjoy trying new dishes. It’s kind of like design—lots of experimenting. What’s your dream restaurant like?",
+    "chat": "66fa9d16052cdea7fdae6349",
+    "createdAt": "2024-09-30T13:39:43.441Z",
+    "updatedAt": "2024-09-30T13:39:43.441Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaa274a24a8748cd5060a",
+    "sender": "66fa8a95052cdea7fdae5bce",
+    "content": "I imagine a cozy place with a menu that changes seasonally. It’d be all about fresh ingredients and good vibes. What’s your dream project?",
+    "chat": "66fa9d16052cdea7fdae6349",
+    "createdAt": "2024-09-30T13:39:51.736Z",
+    "updatedAt": "2024-09-30T13:39:51.736Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaa2f4a24a8748cd50611",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’d love to create a platform that connects people with local artists and chefs. Something that fosters creativity!",
+    "chat": "66fa9d16052cdea7fdae6349",
+    "createdAt": "2024-09-30T13:39:59.723Z",
+    "updatedAt": "2024-09-30T13:39:59.723Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaaec4a24a8748cd5066a",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Hey Harper! I love that you work with mixed media. What’s your latest project about?",
+    "chat": "66fa9d0c052cdea7fdae6329",
+    "createdAt": "2024-09-30T13:43:08.659Z",
+    "updatedAt": "2024-09-30T13:43:08.659Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaaf34a24a8748cd50678",
+    "sender": "66fa907a052cdea7fdae5cb2",
+    "content": "Hey Safi! I’m working on a series inspired by city life. Trying to capture the energy of everyday moments. What about you?",
+    "chat": "66fa9d0c052cdea7fdae6329",
+    "createdAt": "2024-09-30T13:43:15.794Z",
+    "updatedAt": "2024-09-30T13:43:15.794Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab104a24a8748cd50696",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "That sounds awesome! I’m currently focused on a web design project for a startup. It’s all about creating a good user experience.",
+    "chat": "66fa9d0c052cdea7fdae6329",
+    "createdAt": "2024-09-30T13:43:44.849Z",
+    "updatedAt": "2024-09-30T13:43:44.849Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab174a24a8748cd506a2",
+    "sender": "66fa907a052cdea7fdae5cb2",
+    "content": "Nice! Good design is key. I feel like art and design go hand in hand. Do you find inspiration from art in your work?",
+    "chat": "66fa9d0c052cdea7fdae6329",
+    "createdAt": "2024-09-30T13:43:51.729Z",
+    "updatedAt": "2024-09-30T13:43:51.729Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab1d4a24a8748cd506aa",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Definitely! I love how art can tell a story. It inspires my design choices. What techniques do you enjoy experimenting with?",
+    "chat": "66fa9d0c052cdea7fdae6329",
+    "createdAt": "2024-09-30T13:43:57.778Z",
+    "updatedAt": "2024-09-30T13:43:57.778Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab244a24a8748cd506b6",
+    "sender": "66fa907a052cdea7fdae5cb2",
+    "content": "I love layering textures and colors. It adds depth to my pieces. What about you—any favorite design tools?",
+    "chat": "66fa9d0c052cdea7fdae6329",
+    "createdAt": "2024-09-30T13:44:04.406Z",
+    "updatedAt": "2024-09-30T13:44:04.406Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab2c4a24a8748cd506be",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m really into Figma for UI design. It’s great for collaboration.",
+    "chat": "66fa9d0c052cdea7fdae6329",
+    "createdAt": "2024-09-30T13:44:12.561Z",
+    "updatedAt": "2024-09-30T13:44:12.561Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab724a24a8748cd50728",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Hey Olivia! I saw you’re a marketing strategist. What trends are you excited about right now?",
+    "chat": "66fa9d03052cdea7fdae6308",
+    "createdAt": "2024-09-30T13:45:22.767Z",
+    "updatedAt": "2024-09-30T13:45:22.767Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab784a24a8748cd5072f",
+    "sender": "66fa88b4052cdea7fdae5b82",
+    "content": "Hey Safi! I’m really into how brands are using storytelling in their campaigns. It’s fascinating. What about you? What’s your current project?",
+    "chat": "66fa9d03052cdea7fdae6308",
+    "createdAt": "2024-09-30T13:45:28.782Z",
+    "updatedAt": "2024-09-30T13:45:28.782Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab804a24a8748cd50737",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m working on a web design for a startup. Trying to make it user-friendly and visually appealing.",
+    "chat": "66fa9d03052cdea7fdae6308",
+    "createdAt": "2024-09-30T13:45:36.346Z",
+    "updatedAt": "2024-09-30T13:45:36.346Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab864a24a8748cd5073f",
+    "sender": "66fa88b4052cdea7fdae5b82",
+    "content": "That’s great! Good design really helps tell a brand’s story. Do you think design influences consumer behavior?",
+    "chat": "66fa9d03052cdea7fdae6308",
+    "createdAt": "2024-09-30T13:45:42.120Z",
+    "updatedAt": "2024-09-30T13:45:42.120Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab8d4a24a8748cd50747",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "That’s great! Good design really helps tell a brand’s story. Do you think design influences consumer behavior?",
+    "chat": "66fa9d03052cdea7fdae6308",
+    "createdAt": "2024-09-30T13:45:49.011Z",
+    "updatedAt": "2024-09-30T13:45:49.011Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faab954a24a8748cd5074f",
+    "sender": "66fa88b4052cdea7fdae5b82",
+    "content": "I loved the “Share a Coke” campaign. It was clever and personal. It really connected with consumers. Any campaigns inspire your design work?",
+    "chat": "66fa9d03052cdea7fdae6308",
+    "createdAt": "2024-09-30T13:45:57.183Z",
+    "updatedAt": "2024-09-30T13:45:57.183Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faabe94a24a8748cd5079e",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Hey Emma! Your nature photography sounds amazing. What’s your favorite place to shoot?",
+    "chat": "66fa9cfb052cdea7fdae62e9",
+    "createdAt": "2024-09-30T13:47:21.297Z",
+    "updatedAt": "2024-09-30T13:47:21.297Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faabef4a24a8748cd507a5",
+    "sender": "66fa8719052cdea7fdae5b5c",
+    "content": "Hey Safi! I love shooting in national parks. The landscapes are breathtaking! What about you? What are you working on?",
+    "chat": "66fa9cfb052cdea7fdae62e9",
+    "createdAt": "2024-09-30T13:47:27.901Z",
+    "updatedAt": "2024-09-30T13:47:27.901Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faabf74a24a8748cd507ad",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m working on a web design project for a startup. Trying to create an engaging user experience.",
+    "chat": "66fa9cfb052cdea7fdae62e9",
+    "createdAt": "2024-09-30T13:47:35.539Z",
+    "updatedAt": "2024-09-30T13:47:35.539Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faabfe4a24a8748cd507b5",
+    "sender": "66fa8719052cdea7fdae5b5c",
+    "content": "Nice! That’s so important. I think good design can really enhance the way people interact with content. Do you incorporate visuals into your work?",
+    "chat": "66fa9cfb052cdea7fdae62e9",
+    "createdAt": "2024-09-30T13:47:42.113Z",
+    "updatedAt": "2024-09-30T13:47:42.113Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faac034a24a8748cd507bd",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Absolutely! I believe visuals can tell a story just like photography. What’s your favorite type of shot to take?",
+    "chat": "66fa9cfb052cdea7fdae62e9",
+    "createdAt": "2024-09-30T13:47:47.409Z",
+    "updatedAt": "2024-09-30T13:47:47.409Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faac0b4a24a8748cd507c5",
+    "sender": "66fa8719052cdea7fdae5b5c",
+    "content": "I love capturing golden hour shots. The light is just magical then. Do you have a favorite design style?",
+    "chat": "66fa9cfb052cdea7fdae62e9",
+    "createdAt": "2024-09-30T13:47:55.476Z",
+    "updatedAt": "2024-09-30T13:47:55.476Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faac134a24a8748cd507cd",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m into minimalist design. It keeps things clean and user-focused.",
+    "chat": "66fa9cfb052cdea7fdae62e9",
+    "createdAt": "2024-09-30T13:48:03.145Z",
+    "updatedAt": "2024-09-30T13:48:03.145Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faad064a24a8748cd5081b",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Hey Mia! I love that you’re a fitness coach. What’s your favorite training method to teach?",
+    "chat": "66fa9d45052cdea7fdae63a9",
+    "createdAt": "2024-09-30T13:52:06.833Z",
+    "updatedAt": "2024-09-30T13:52:06.833Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faad0f4a24a8748cd50824",
+    "sender": "66fa8f90052cdea7fdae5c8c",
+    "content": "Hey Safi! I really enjoy high-intensity training. It’s fun and super effective! What about you? What are you currently working on?",
+    "chat": "66fa9d45052cdea7fdae63a9",
+    "createdAt": "2024-09-30T13:52:15.598Z",
+    "updatedAt": "2024-09-30T13:52:15.598Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faad184a24a8748cd5082b",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m working on a web design project for a startup. Trying to create an engaging experience for users.",
+    "chat": "66fa9d45052cdea7fdae63a9",
+    "createdAt": "2024-09-30T13:52:24.013Z",
+    "updatedAt": "2024-09-30T13:52:24.013Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faad204a24a8748cd50833",
+    "sender": "66fa8f90052cdea7fdae5c8c",
+    "content": "That’s awesome! Good design can really motivate people to engage more. Do you think there’s a connection between fitness and design?",
+    "chat": "66fa9d45052cdea7fdae63a9",
+    "createdAt": "2024-09-30T13:52:32.764Z",
+    "updatedAt": "2024-09-30T13:52:32.764Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faad274a24a8748cd5083b",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Definitely! Just like in fitness, a clear structure in design helps users stay focused. What do you find most rewarding about coaching?",
+    "chat": "66fa9d45052cdea7fdae63a9",
+    "createdAt": "2024-09-30T13:52:39.988Z",
+    "updatedAt": "2024-09-30T13:52:39.988Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faad304a24a8748cd50844",
+    "sender": "66fa8f90052cdea7fdae5c8c",
+    "content": "Seeing my clients hit their goals is the best part! It’s so fulfilling. What inspires your design work?",
+    "chat": "66fa9d45052cdea7fdae63a9",
+    "createdAt": "2024-09-30T13:52:48.158Z",
+    "updatedAt": "2024-09-30T13:52:48.158Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faad374a24a8748cd5084b",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m inspired by user needs and how good design can improve their experience.",
+    "chat": "66fa9d45052cdea7fdae63a9",
+    "createdAt": "2024-09-30T13:52:55.632Z",
+    "updatedAt": "2024-09-30T13:52:55.632Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faad964a24a8748cd5085b",
+    "sender": "66fa8f90052cdea7fdae5c8c",
+    "content": "That’s a great approach! If you ever want to chat about how to design workout apps or anything fitness-related, I’d love to help!",
+    "chat": "66fa9d45052cdea7fdae63a9",
+    "createdAt": "2024-09-30T13:54:30.506Z",
+    "updatedAt": "2024-09-30T13:54:30.506Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faae154a24a8748cd508bd",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Hey James! Your travel blog sounds incredible. What’s your favorite off-the-beaten-path destination?",
+    "chat": "66fa9d3b052cdea7fdae6389",
+    "createdAt": "2024-09-30T13:56:37.873Z",
+    "updatedAt": "2024-09-30T13:56:37.873Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faae1c4a24a8748cd508c4",
+    "sender": "66fa8af2052cdea7fdae5be1",
+    "content": "Hey Safi! I recently loved exploring a small village in Portugal. It was so authentic! What about you? What are you working on?",
+    "chat": "66fa9d3b052cdea7fdae6389",
+    "createdAt": "2024-09-30T13:56:44.585Z",
+    "updatedAt": "2024-09-30T13:56:44.585Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faae224a24a8748cd508d5",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m currently focused on a web design project for a startup. Trying to create an engaging user experience.",
+    "chat": "66fa9d3b052cdea7fdae6389",
+    "createdAt": "2024-09-30T13:56:50.899Z",
+    "updatedAt": "2024-09-30T13:56:50.899Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faae294a24a8748cd508dc",
+    "sender": "66fa8af2052cdea7fdae5be1",
+    "content": "That sounds cool! Good design is essential for keeping users interested. Do you think travel influences your design work?",
+    "chat": "66fa9d3b052cdea7fdae6389",
+    "createdAt": "2024-09-30T13:56:57.254Z",
+    "updatedAt": "2024-09-30T13:56:57.254Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faae2f4a24a8748cd508ed",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Definitely! Experiencing different cultures inspires me to think outside the box in design. What’s the best travel tip you’ve learned?",
+    "chat": "66fa9d3b052cdea7fdae6389",
+    "createdAt": "2024-09-30T13:57:03.254Z",
+    "updatedAt": "2024-09-30T13:57:03.254Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faae344a24a8748cd508f4",
+    "sender": "66fa8af2052cdea7fdae5be1",
+    "content": "Always try to learn a few local phrases. It helps you connect with people. What inspires your design choices?",
+    "chat": "66fa9d3b052cdea7fdae6389",
+    "createdAt": "2024-09-30T13:57:08.543Z",
+    "updatedAt": "2024-09-30T13:57:08.543Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faae3c4a24a8748cd50905",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I draw inspiration from user needs and how design can enhance their experience.",
+    "chat": "66fa9d3b052cdea7fdae6389",
+    "createdAt": "2024-09-30T13:57:16.844Z",
+    "updatedAt": "2024-09-30T13:57:16.844Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faae454a24a8748cd5090c",
+    "sender": "66fa8af2052cdea7fdae5be1",
+    "content": "If you ever want tips on creating travel-related content or websites, just let me know!",
+    "chat": "66fa9d3b052cdea7fdae6389",
+    "createdAt": "2024-09-30T13:57:25.335Z",
+    "updatedAt": "2024-09-30T13:57:25.335Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaede4a24a8748cd5097a",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Hey Sophia! Your work in fashion sounds amazing. What inspires your designs?",
+    "chat": "66fa9d1f052cdea7fdae6369",
+    "createdAt": "2024-09-30T13:59:58.567Z",
+    "updatedAt": "2024-09-30T13:59:58.567Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaee64a24a8748cd50982",
+    "sender": "66fa8b8e052cdea7fdae5bf4",
+    "content": "Hey Safi! I’m inspired by nature and everyday life. I love creating pieces that are both stylish and sustainable. What about you? What are you working on?",
+    "chat": "66fa9d1f052cdea7fdae6369",
+    "createdAt": "2024-09-30T14:00:06.702Z",
+    "updatedAt": "2024-09-30T14:00:06.702Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaef04a24a8748cd5098b",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m working on a web design project for a startup. Focused on creating a user-friendly experience.",
+    "chat": "66fa9d1f052cdea7fdae6369",
+    "createdAt": "2024-09-30T14:00:16.041Z",
+    "updatedAt": "2024-09-30T14:00:16.041Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaef74a24a8748cd50993",
+    "sender": "66fa8b8e052cdea7fdae5bf4",
+    "content": "That’s awesome! Good design really helps tell a brand’s story. Do you incorporate sustainability into your designs?",
+    "chat": "66fa9d1f052cdea7fdae6369",
+    "createdAt": "2024-09-30T14:00:23.934Z",
+    "updatedAt": "2024-09-30T14:00:23.934Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaeff4a24a8748cd5099b",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I try to! I think it’s important for digital design to consider sustainability too. What’s your favorite piece you’ve designed?",
+    "chat": "66fa9d1f052cdea7fdae6369",
+    "createdAt": "2024-09-30T14:00:31.114Z",
+    "updatedAt": "2024-09-30T14:00:31.114Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaf084a24a8748cd509a2",
+    "sender": "66fa8b8e052cdea7fdae5bf4",
+    "content": "I recently created a collection made from recycled materials. It was so rewarding to see it come together! What inspires your design process?",
+    "chat": "66fa9d1f052cdea7fdae6369",
+    "createdAt": "2024-09-30T14:00:40.510Z",
+    "updatedAt": "2024-09-30T14:00:40.510Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faaf114a24a8748cd509aa",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m inspired by user feedback and how to make their experience better.",
+    "chat": "66fa9d1f052cdea7fdae6369",
+    "createdAt": "2024-09-30T14:00:49.870Z",
+    "updatedAt": "2024-09-30T14:00:49.870Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faafa34a24a8748cd509f3",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "Hey Elijah! I see you’re a tech enthusiast. What’s the latest gadget you’re excited about?",
+    "chat": "66fa9cdf052cdea7fdae62a9",
+    "createdAt": "2024-09-30T14:03:15.285Z",
+    "updatedAt": "2024-09-30T14:03:15.285Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faafaa4a24a8748cd50a02",
+    "sender": "66fa8db1052cdea7fdae5c2d",
+    "content": "Hey Safi! I just got a new smartwatch, and it’s amazing! What about you? What are you currently working on?",
+    "chat": "66fa9cdf052cdea7fdae62a9",
+    "createdAt": "2024-09-30T14:03:22.418Z",
+    "updatedAt": "2024-09-30T14:03:22.418Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faafb44a24a8748cd50a0f",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m working on a web design project for a startup. Trying to create a seamless user experience.",
+    "chat": "66fa9cdf052cdea7fdae62a9",
+    "createdAt": "2024-09-30T14:03:32.256Z",
+    "updatedAt": "2024-09-30T14:03:32.256Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faafbb4a24a8748cd50a1e",
+    "sender": "66fa8db1052cdea7fdae5c2d",
+    "content": "That sounds great! Good UX is so important in tech. Do you follow any specific trends in design?",
+    "chat": "66fa9cdf052cdea7fdae62a9",
+    "createdAt": "2024-09-30T14:03:39.462Z",
+    "updatedAt": "2024-09-30T14:03:39.462Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faafc64a24a8748cd50a30",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m really into minimalist design lately. It keeps things clean and easy to navigate. What’s your latest coding project?",
+    "chat": "66fa9cdf052cdea7fdae62a9",
+    "createdAt": "2024-09-30T14:03:50.006Z",
+    "updatedAt": "2024-09-30T14:03:50.006Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faafcc4a24a8748cd50a3b",
+    "sender": "66fa8db1052cdea7fdae5c2d",
+    "content": "I’m building a personal finance app. I want to make budgeting easier for users. What inspires your design work?",
+    "chat": "66fa9cdf052cdea7fdae62a9",
+    "createdAt": "2024-09-30T14:03:56.203Z",
+    "updatedAt": "2024-09-30T14:03:56.203Z",
+    "__v": 0
+  },
+  {
+    "_id": "66faafd74a24a8748cd50a44",
+    "sender": "66fa84ff052cdea7fdae5b43",
+    "content": "I’m inspired by user needs and how design can enhance their digital experiences.",
+    "chat": "66fa9cdf052cdea7fdae62a9",
+    "createdAt": "2024-09-30T14:04:07.949Z",
+    "updatedAt": "2024-09-30T14:04:07.949Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fab0084a24a8748cd50a57",
+    "sender": "66fa8db1052cdea7fdae5c2d",
+    "content": "That’s awesome! I’d love to see your designs sometime. Maybe we could collaborate on a project that combines tech and design!",
+    "chat": "66fa9cdf052cdea7fdae62a9",
+    "createdAt": "2024-09-30T14:04:56.630Z",
+    "updatedAt": "2024-09-30T14:04:56.630Z",
+    "__v": 0
+  }
+]
