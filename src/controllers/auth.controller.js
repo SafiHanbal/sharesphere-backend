@@ -2,6 +2,7 @@ import { promisify } from 'util';
 import { fileURLToPath } from 'url';
 
 import path from 'path';
+import axios from 'axios';
 import jwt from 'jsonwebtoken';
 import nodemailer from 'nodemailer';
 import catchAsync from '../utils/catchAsync.js';
@@ -10,6 +11,7 @@ import AppError from '../utils/AppError.js';
 import User from '../models/user.model.js';
 
 import { getMailMarkup } from '../utils/otpMailMarkup.js';
+import generateRandomString from '../utils/generateRandomString.js';
 
 // Defining variable to access files
 const __filename = fileURLToPath(import.meta.url);
@@ -32,7 +34,21 @@ const createAndSendToken = (user, statusCode, res) => {
 export const signUp = catchAsync(async (req, res, next) => {
   const { username, email, password, confirmPassword } = req.body;
 
-  const user = await User.create({
+  if (!username || !email || !password || !confirmPassword)
+    return next(
+      new AppError(
+        'Please provide username, email, password and confirmPassword',
+        400
+      )
+    );
+
+  // Check if user already exists
+  let user = await User.findOne({ email });
+
+  if (user)
+    return next(new AppError('User already exists. Please login.', 400));
+
+  user = await User.create({
     username,
     email,
     password,
@@ -49,6 +65,18 @@ export const login = catchAsync(async (req, res, next) => {
     return next(new AppError('Please provide email and password.', 400));
 
   const user = await User.findOne({ email }).select('+password');
+
+  // check if authType is email-password
+  switch (user.authType) {
+    case 'google':
+      return next(new AppError('Please login with google.', 400));
+
+    case 'facebook':
+      return next(new AppError('Please login with facebook.', 400));
+
+    default:
+      break;
+  }
 
   if (!user)
     return next(
@@ -208,3 +236,116 @@ export const strictTo =
       );
     next();
   };
+
+// Social Login Controllers
+export const googleLogin = catchAsync(async (req, res, next) => {
+  const { accessToken } = req.body;
+
+  const config = {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  };
+
+  // Fetch user profile information
+  const profileResponse = await axios.get(
+    'https://www.googleapis.com/oauth2/v1/userinfo',
+    config
+  );
+
+  // Destructure and rename necessary info
+  const {
+    given_name: firstName,
+    family_name: lastName,
+    email,
+  } = profileResponse.data;
+
+  // Check if user aleredy exists
+  let user = await User.findOne({ email });
+  let statusCode = 200;
+
+  if (!user) {
+    // Generating unique username
+    let username;
+    let isUnique = false;
+
+    while (!isUnique) {
+      username = `${email.split('@')[0]}_${generateRandomString(6)}`;
+      isUnique = !(await User.findOne({ username })); // Check for uniqueness
+    }
+
+    user = await User.create({
+      email,
+      firstName,
+      lastName,
+      username,
+      authType: 'google',
+    });
+
+    statusCode = 201;
+  }
+
+  // Check if authType is google
+  switch (user.authType) {
+    case 'email-password':
+      return next(new AppError('Please login with email and password.', 400));
+
+    case 'facebook':
+      return next(new AppError('Please login with facebook.', 400));
+
+    default:
+      break;
+  }
+
+  createAndSendToken(user, statusCode, res);
+});
+
+export const facebookLogin = catchAsync(async (req, res, next) => {
+  const { accessToken } = req.body;
+
+  const response = await axios.get(
+    `https://graph.facebook.com/me?access_token=${accessToken}&fields=name,email,picture`
+  );
+  const { name, email } = response.data;
+
+  if (!email)
+    return next(
+      new AppError('This facebook account does not have an email.', 400)
+    );
+
+  let user = await User.findOne({ email });
+  let statusCode = 200;
+
+  if (!user) {
+    // Generating unique username
+    let username;
+    let isUnique = false;
+
+    while (!isUnique) {
+      username = `${email.split('@')[0]}_${generateRandomString(6)}`;
+      isUnique = !(await User.findOne({ username })); // Check for uniqueness
+    }
+
+    user = await User.create({
+      email,
+      firstName: name.split(' ')[0],
+      lastName: name.split(' ')[1],
+      username,
+      authType: 'facebook',
+    });
+
+    statusCode = 201;
+  }
+
+  // Check if authType is google
+  switch (user.authType) {
+    case 'email-password':
+      return next(new AppError('Please login with email and password.', 400));
+
+    case 'google':
+      return next(new AppError('Please login with google.', 400));
+
+    default:
+      break;
+  }
+
+  createAndSendToken(user, statusCode, res);
+});

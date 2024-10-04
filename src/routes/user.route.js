@@ -9,6 +9,8 @@ import {
   protect,
   strictTo,
   updatePassword,
+  googleLogin,
+  facebookLogin,
 } from '../controllers/auth.controller.js';
 
 import {
@@ -33,6 +35,10 @@ router.route('/logout').get(protect, logout);
 router.route('/forgot-password').post(forgotPassword);
 router.route('/reset-password').post(resetPassword);
 router.route('/update-password').post(protect, updatePassword);
+
+// Social Login
+router.route('/google-login').post(googleLogin);
+router.route('/facebook-login').post(facebookLogin);
 
 // Follow routes
 router.route('/follow/:userId').get(protect, follow);

@@ -20,11 +20,7 @@ const userSchema = new mongoose.Schema(
       required: [true, 'A user must have an email.'],
       unique: [true, 'This email already has an account. Please login.'],
     },
-    password: {
-      type: String,
-      required: [true, 'A user must have a password.'],
-      select: false,
-    },
+
     followersCount: {
       type: Number,
       default: 0,
@@ -42,9 +38,20 @@ const userSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    authType: {
+      type: String,
+      enum: {
+        values: ['email-password', 'google', 'facebook'],
+        message: 'Auth type can only be email-password, google or facebook',
+      },
+      default: 'email-password',
+    },
+    password: {
+      type: String,
+      select: false,
+    },
     confirmPassword: {
       type: String,
-      required: [true, 'Please confirm your password.'],
       validate: {
         message: 'Passwords do not match.',
         validator: function (val) {
@@ -73,6 +80,9 @@ userSchema.virtual('posts', {
 
 // Encrypting user's password on signup
 userSchema.pre('save', async function (next) {
+  // returnting if there is no password for login with google and facebook
+  if (!this.password) next();
+
   if (!this.isModified('password')) return next();
 
   this.password = await bcrypt.hash(this.password, 12);
