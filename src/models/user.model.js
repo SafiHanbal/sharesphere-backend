@@ -1,3 +1,4 @@
+import { promisify } from 'util';
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
@@ -85,7 +86,7 @@ userSchema.pre('save', async function (next) {
 
   if (!this.isModified('password')) return next();
 
-  this.password = await bcrypt.hash(this.password, 12);
+  this.password = await promisify(bcrypt).hash(this.password, 12);
   this.confirmPassword = undefined;
 
   next();
