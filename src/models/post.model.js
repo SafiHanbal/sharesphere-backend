@@ -76,36 +76,36 @@ postSchema.post('findOneAndDelete', async function (deletedPost) {
 });
 
 // Incrementing postCount on associated user document
-// postSchema.pre('save', async function (next) {
-//   const post = this;
+postSchema.pre('save', async function (next) {
+  const post = this;
 
-//   try {
-//     const postCount = await mongoose
-//       .model('Post')
-//       .countDocuments({ user: post.user });
+  try {
+    const postCount = await mongoose
+      .model('Post')
+      .countDocuments({ user: post.user });
 
-//     await User.findByIdAndUpdate(post.user, { postCount: postCount + 1 });
-//   } catch (err) {
-//     next(err);
-//   }
-// });
+    await User.findByIdAndUpdate(post.user, { postCount: postCount + 1 });
+  } catch (err) {
+    next(err);
+  }
+});
 
 // Decrementing postCount on associated user document
-// postSchema.post('findOneAndDelete', async function (deletedPost) {
-//   if (deletedPost) {
-//     try {
-//       const postCount = await mongoose
-//         .model('Post')
-//         .countDocuments({ user: deletedPost.user });
+postSchema.post('findOneAndDelete', async function (deletedPost) {
+  if (deletedPost) {
+    try {
+      const postCount = await mongoose
+        .model('Post')
+        .countDocuments({ user: deletedPost.user });
 
-//       await User.findByIdAndUpdate(deletedPost.user, {
-//         postCount,
-//       });
-//     } catch (err) {
-//       console.error('Error updating likeCounts after deletion:', err);
-//     }
-//   }
-// });
+      await User.findByIdAndUpdate(deletedPost.user, {
+        postCount,
+      });
+    } catch (err) {
+      console.error('Error updating likeCounts after deletion:', err);
+    }
+  }
+});
 
 const Post = mongoose.model('Post', postSchema);
 

@@ -1,6 +1,10 @@
-import cors from 'cors';
 import path from 'path';
-import morgan from 'morgan';
+import cors from 'cors';
+import helmet from 'helmet';
+import xss from 'xss-clean';
+import hpp from 'hpp';
+import compression from 'compression';
+import rateLimit from 'express-rate-limit';
 import express from 'express';
 
 import userRouter from './routes/user.route.js';
@@ -17,10 +21,24 @@ const app = express();
 app.use('/public', express.static(path.join('src', 'public')));
 
 // Developement middlewares
-if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'development') {
+  const { default: morgan } = await import('morgan');
+  app.use(morgan('dev'));
+}
 
 // Middlewares
 app.use(cors());
+app.use(helmet());
+app.use(xss());
+app.use(hpp());
+app.use(compression());
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per window
+});
+app.use(limiter);
+
 app.use(express.json());
 
 // Routes

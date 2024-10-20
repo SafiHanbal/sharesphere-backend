@@ -19,6 +19,7 @@ connect(DB)
 
 // Note: Please comment out password encryption functionlity from User model
 // and Like count on like creating and deletion from Like model
+// and Post count on post creating and deletion from Post model
 const importDataToDB = async () => {
   try {
     // Reading data

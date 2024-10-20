@@ -31,14 +31,12 @@ mongoose
     const io = new Server(server, {
       pingTimeout: 60000,
       cors: {
-        origin: ['http://localhost:5173', 'https://localhost:5173'],
+        origin: [process.env.FRONTEND_URL],
         methods: ['GET', 'POST'],
       },
     });
 
     io.on('connection', (socket) => {
-      console.log('user connected', socket.id);
-
       socket.on('register', ({ userId }) => {
         userSocketMap[userId] = socket.id;
       });
@@ -48,7 +46,6 @@ mongoose
       });
 
       socket.on('disconnect', (reason) => {
-        console.log('user disconnected', reason);
         removeFromSocketMap(socket);
       });
 
@@ -79,20 +76,20 @@ mongoose
       });
 
       // Socket for call functionality
-      socket.on('start-call', ({ caller, recipientId, callType }) => {
+      socket.on('start-call', ({ caller, recipientId, callType, offer }) => {
         const recipientSocketId = userSocketMap[recipientId];
 
         if (!recipientSocketId) return;
         socket
           .to(recipientSocketId)
-          .emit('incoming-call', { caller, callType });
+          .emit('incoming-call', { caller, callType, offer });
       });
 
-      socket.on('set-accept-call', ({ recipientId }) => {
+      socket.on('set-accept-call', ({ recipientId, answer }) => {
         const recipientSocketId = userSocketMap[recipientId];
 
         if (!recipientSocketId) return;
-        socket.to(recipientSocketId).emit('get-accept-call');
+        socket.to(recipientSocketId).emit('get-accept-call', { answer });
       });
 
       socket.on('set-end-call', ({ recipientId }) => {
@@ -114,6 +111,27 @@ mongoose
 
         if (!recipientSocketId) return;
         socket.to(recipientSocketId).emit('get-line-busy');
+      });
+
+      socket.on('set-negotiation-needed', ({ recipientId, offer }) => {
+        const recipientSocketId = userSocketMap[recipientId];
+
+        if (!recipientSocketId) return;
+        socket.to(recipientSocketId).emit('get-negotiation-needed', { offer });
+      });
+
+      socket.on('set-negotiation-done', ({ recipientId, answer }) => {
+        const recipientSocketId = userSocketMap[recipientId];
+
+        if (!recipientSocketId) return;
+        socket.to(recipientSocketId).emit('get-negotiation-done', { answer });
+      });
+
+      socket.on('set-candidate', ({ recipientId, candidate }) => {
+        const recipientSocketId = userSocketMap[recipientId];
+
+        if (!recipientSocketId) return;
+        socket.to(recipientSocketId).emit('get-candidate', { candidate });
       });
     });
   })
